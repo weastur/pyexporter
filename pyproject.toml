@@ -1,0 +1,16 @@
+[project]
+name = "py-exporter"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Pavel Sapezhka", email = "me@weastur.com" }
+]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+py-exporter = "py_exporter:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
