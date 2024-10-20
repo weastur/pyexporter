@@ -2,11 +2,38 @@
 name = "py-exporter"
 version = "0.1.0"
 description = "Add your description here"
-authors = [
-    { name = "Pavel Sapezhka", email = "me@weastur.com" }
-]
+authors = [{ name = "Pavel Sapezhka", email = "me@weastur.com" }]
 requires-python = ">=3.9"
 dependencies = []
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["exporter", "prometheus", "monitoring"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Environment :: No Input/Output (Daemon)",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+    "Topic :: System :: Monitoring",
+    "Topic :: System :: Systems Administration",
+]
+
+[project.urls]
+Homepage = "https://pyexporter.io"
+Documentation = "https://pyexporter.io"
+Repository = "https://github.com/weastur/pyexporter.git"
+Issues = "https://github.com/weastur/pyexporter/issues"
+Changelog = "https://github.com/weastur/pyexporter/blob/master/CHANGELOG.md"
 
 [project.scripts]
 py-exporter = "py_exporter:main"
