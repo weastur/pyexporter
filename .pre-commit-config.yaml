@@ -27,3 +27,9 @@ repos:
       - id: name-tests-test
       - id: pretty-format-json
       - id: trailing-whitespace
+
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+      - id: gitlint
+        stages: [commit-msg]
