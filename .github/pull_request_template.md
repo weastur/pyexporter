@@ -1,6 +1,8 @@
 # Description
 
-Include a brief summary of the change and the issue it addresses. Also, explain the motivation and any relevant context. List any dependencies required for this change.
+Include a brief summary of the change and the issue it addresses.
+Also, explain the motivation and any relevant context.
+List any dependencies required for this change.
 
 Fixes # (issue)
 
@@ -15,7 +17,8 @@ Choose the type of change:
 
 ## Testing details
 
-Describe the tests performed to verify the changes. Include instructions for reproducing the tests and any relevant details.
+Describe the tests performed to verify the changes.
+Include instructions for reproducing the tests and any relevant details.
 
 - [ ] Test A
 - [ ] Test B
