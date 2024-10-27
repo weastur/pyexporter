@@ -43,3 +43,11 @@ repos:
     rev: v1.35.1
     hooks:
       - id: yamllint
+
+  - repo: local
+    hooks:
+      - id: liccheck
+        name: Run Python License Checker
+        entry: ./hooks/liccheck.sh
+        pass_filenames: false
+        language: system
