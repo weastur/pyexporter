@@ -46,6 +46,14 @@ repos:
 
   - repo: local
     hooks:
+      - id: shellcheck
+        name: Run ShellCheck
+        entry: ./hooks/shellcheck.sh
+        pass_filenames: false
+        language: system
+
+  - repo: local
+    hooks:
       - id: liccheck
         name: Run Python License Checker
         entry: ./hooks/liccheck.sh
