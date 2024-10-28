@@ -163,3 +163,5 @@ cython_debug/
 
 # Ignore requirements.txt 'cause it exists only for liccheck
 requirements.txt
+
+AUTHORS.new

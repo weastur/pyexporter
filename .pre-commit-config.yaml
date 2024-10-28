@@ -59,3 +59,11 @@ repos:
         entry: ./hooks/liccheck.sh
         pass_filenames: false
         language: system
+
+  - repo: local
+    hooks:
+      - id: update-authors
+        name: Update AUTHORS file
+        entry: ./hooks/update-authors.sh
+        pass_filenames: false
+        language: system
