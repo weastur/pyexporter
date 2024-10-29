@@ -22,6 +22,7 @@ repos:
       - id: debug-statements
       - id: destroyed-symlinks
       - id: detect-aws-credentials
+        args: [--allow-missing-credentials]
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: forbid-submodules
