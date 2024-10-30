@@ -1,0 +1,33 @@
+changelog:
+  exclude:
+    labels:
+      - relnotes-ignore
+      - documentation
+  categories:
+    - title: Breaking changes
+      labels:
+        - relnotes-breaking
+    - title: New features
+      labels:
+        - relnotes-features
+    - title: Fixes
+      labels:
+        - relnotes-fixes
+    - title: Security
+      labels:
+        - relnotes-security
+    - title: Dependencies
+      labels:
+        - dependency-update
+    - title: Other
+      labels:
+        - "*"
+      exclude:
+        labels:
+          - relnotes-breaking
+          - relnotes-features
+          - relnotes-fixes
+          - relnotes-security
+          - dependency-update
+        authors:
+          - pre-commit-ci[bot]
