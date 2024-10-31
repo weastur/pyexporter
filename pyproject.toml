@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "Add your description here"
 authors = [{ name = "Pavel Sapezhka", email = "me@weastur.com" }]
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "loguru>=0.7.2",
+    "prometheus-client>=0.21.0",
+    "pydantic>=2.9.2",
+]
 readme = "README.md"
 license = { file = "LICENSE" }
 keywords = ["exporter", "prometheus", "monitoring"]
