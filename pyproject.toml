@@ -8,6 +8,7 @@ dependencies = [
     "loguru>=0.7.2",
     "prometheus-client>=0.21.0",
     "pydantic>=2.9.2",
+    "pydantic-settings[yaml]>=2.6.0",
 ]
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -40,7 +41,7 @@ Issues = "https://github.com/weastur/pyexporter/issues"
 Changelog = "https://github.com/weastur/pyexporter/blob/master/CHANGELOG.md"
 
 [project.scripts]
-py-exporter = "py_exporter:main"
+py-exporter = "py_exporter.main:entrypoint"
 
 [build-system]
 requires = ["hatchling"]
