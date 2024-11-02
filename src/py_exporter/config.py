@@ -32,7 +32,7 @@ class TLSProtocol(IntEnum):
 class Log(BaseModel):
     level: typing.Literal[
         "trace", "debug", "info", "success", "warning", "error", "critical"
-    ] = Field("INFO", description="Log level")
+    ] = Field("info", description="Log level")
 
 
 class DefaultCollectors(BaseModel):
