@@ -32,13 +32,17 @@ class TLSProtocol(IntEnum):
 class Log(BaseModel):
     level: typing.Literal[
         "trace", "debug", "info", "success", "warning", "error", "critical"
-    ] = Field("info", description="Log level")
+    ] = Field(default="info", description="Log level")
 
 
 class DefaultCollectors(BaseModel):
-    gc: bool = Field(True, description="Enable the GC collector")
-    platform: bool = Field(True, description="Enable the platform collector")
-    process: bool = Field(True, description="Enable the process collector")
+    gc: bool = Field(default=True, description="Enable the GC collector")
+    platform: bool = Field(
+        default=True, description="Enable the platform collector"
+    )
+    process: bool = Field(
+        default=True, description="Enable the process collector"
+    )
 
 
 class Collectors(BaseModel):
@@ -46,24 +50,24 @@ class Collectors(BaseModel):
 
 
 class WebmTLS(BaseModel):
-    enabled: bool = Field(False, description="Enable mTLS")
+    enabled: bool = Field(default=False, description="Enable mTLS")
     cafile: typing.Optional[FilePath] = Field(
-        None, description="Path to the client CA file"
+        default=None, description="Path to the client CA file"
     )
     capath: typing.Optional[DirectoryPath] = Field(
-        None, description="Path to the client CA directory"
+        default=None, description="Path to the client CA directory"
     )
 
 
 class WebTLS(BaseModel):
     cert: typing.Optional[FilePath] = Field(
-        None, description="Path to the TLS certificate"
+        default=None, description="Path to the TLS certificate"
     )
     key: typing.Optional[FilePath] = Field(
-        None, description="Path to the TLS key"
+        default=None, description="Path to the TLS key"
     )
-    protocol: typing.Optional[TLSProtocol] = Field(
-        TLSProtocol.TLS, description="TLS protocol"
+    protocol: TLSProtocol = Field(
+        default=TLSProtocol.TLS, description="TLS protocol"
     )
     mtls: WebmTLS = WebmTLS()
 
@@ -77,8 +81,10 @@ class WebTLS(BaseModel):
 
 
 class Web(BaseModel):
-    port: PositiveInt = Field(9123, description="Port to listen on")
-    addr: IPv4Address = Field("0.0.0.0", description="Address to listen on")
+    port: PositiveInt = Field(default=9213, description="Port to listen on")
+    addr: IPv4Address = Field(
+        default="0.0.0.0", description="Address to listen on"
+    )
     tls: WebTLS = WebTLS()
 
 
