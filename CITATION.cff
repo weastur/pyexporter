@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: cookiecutter-pyexporter
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Pavel
+    family-names: Sapezhka
+    email: me@weastur.com
+repository-code: 'https://github.com/weastur/cookiecutter-pyexporter'
+url: 'https://pyexporter.weastur.com'
+abstract: >-
+  Awesome exporter
+keywords:
+  - prometheus
+  - metrics
+license: MIT
