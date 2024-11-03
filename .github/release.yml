@@ -4,18 +4,21 @@ changelog:
       - relnotes-ignore
       - documentation
   categories:
-    - title: Breaking changes
+    - title: Breaking
       labels:
-        - relnotes-breaking
-    - title: New features
+        - breaking
+    - title: Deprecations
       labels:
-        - relnotes-features
-    - title: Fixes
+        - deprecation
+    - title: Enhancements
       labels:
-        - relnotes-fixes
+        - enhancement
+    - title: Bugs
+      labels:
+        - bug
     - title: Security
       labels:
-        - relnotes-security
+        - security
     - title: Dependencies
       labels:
         - dependency-update
@@ -24,10 +27,11 @@ changelog:
         - "*"
       exclude:
         labels:
-          - relnotes-breaking
-          - relnotes-features
-          - relnotes-fixes
-          - relnotes-security
+          - breaking
+          - bug
           - dependency-update
+          - deprecation
+          - enhancement
+          - security
         authors:
           - pre-commit-ci[bot]
