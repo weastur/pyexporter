@@ -166,5 +166,5 @@ requirements.txt
 
 AUTHORS.new
 
-config.yml
-config.yaml
+./config.yml
+./config.yaml
