@@ -48,3 +48,6 @@ regex = true
 
 [[tool.bumpversion.files]]
 filename = "Dockerfile"
+
+[[tool.bumpversion.files]]
+filename = "Makefile"

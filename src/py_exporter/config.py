@@ -81,7 +81,7 @@ class WebTLS(BaseModel):
 
 
 class Web(BaseModel):
-    port: PositiveInt = Field(default=9213, description="Port to listen on")
+    port: PositiveInt = Field(default=9123, description="Port to listen on")
     addr: IPv4Address = Field(
         default="0.0.0.0", description="Address to listen on"
     )

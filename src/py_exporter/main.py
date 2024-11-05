@@ -45,12 +45,16 @@ def entrypoint() -> int:
     server, thread = start_http_server(
         addr=str(config.web.addr),
         port=config.web.port,
-        certfile=str(config.web.tls.cert),
-        keyfile=str(config.web.tls.key),
+        certfile=str(config.web.tls.cert) if config.web.tls.cert else None,
+        keyfile=str(config.web.tls.key) if config.web.tls.key else None,
         protocol=int(config.web.tls.protocol),
         client_auth_required=config.web.tls.mtls.enabled,
-        client_cafile=str(config.web.tls.mtls.cafile),
-        client_capath=str(config.web.tls.mtls.capath),
+        client_cafile=str(config.web.tls.mtls.cafile)
+        if config.web.tls.mtls.cafile
+        else None,
+        client_capath=str(config.web.tls.mtls.capath)
+        if config.web.tls.mtls.capath
+        else None,
     )
 
     while not _graceful_shutdown:
