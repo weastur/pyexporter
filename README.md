@@ -128,7 +128,7 @@ In the [examples](examples/) you can find some useful files to look at:
 - VRL program for Vector
 - SystemD service file for running the exporter outside the container
 - Ansible playbook to deploy it in isolated environment outside the container
-- Full dump (one scrape) of all the metrics exporter can generate. You can investigate it with [prom2json](https://github.com/prometheus/prom2json)
+- Full [dump](examples/metrics.txt) (one scrape) of all the metrics exporter can generate. You can investigate it with [prom2json](https://github.com/prometheus/prom2json)
 
 ## Contributing
 
