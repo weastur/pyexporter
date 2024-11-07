@@ -1,0 +1,126 @@
+site_name: py-exporter
+site_url: https://pyexporter.weastur.com
+repo_url: https://github.com/weastur/cookiecutter-pyexporter
+repo_name: weastur/cookiecutter-pyexporter
+site_description: >-
+  pyexporter is a cookiecutter template for creating a Python exporter
+site_author: weastur
+copyright: >-
+  Copyright &copy; 2024 Pavel Sapezhka –
+  <a href="#__consent">Change cookie settings</a>
+remote_branch: gh-pages
+remote_name: origin
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+  not_found: warn
+strict: true
+plugins:
+  - search
+  - privacy
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+        reduce_boolean_attributes: true
+        remove_optional_attribute_quotes: true
+nav:
+  - Home: README.md
+  - Contribution: CONTRIBUTING.md
+  - Code of conduct: CODE_OF_CONDUCT.md
+  - Authors: AUTHORS.md
+  - License: LICENSE.md
+extra:
+  generator: false
+  consent:
+    title: Cookie consent
+    description: >-
+      I use cookies to recognize your repeat visits and preferences,
+      as well as to measure the effectiveness of this site and ensure
+      users find what they're looking for. By consenting, you help me
+      improve the site and enhance your experience.
+    actions:
+      - accept
+      - manage
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      title: On this page
+      toc_depth: 3
+      permalink: true
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+      auto_title: true
+      linenums_style: pymdownx-inline
+      line_spans: __span
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+theme:
+  name: material
+  language: en
+  favicon: favicon.png
+  icon:
+    repo: fontawesome/brands/github-alt
+    logo: fontawesome/solid/chart-line
+  features:
+    - announce.dismiss
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: indigo
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference

@@ -19,7 +19,7 @@ pip install py-exporter
 ```
 
 More accurate and complicated installation with the isolation in a virtual environment
-can be found in the [examples](examples/ansible/roles/py-exporter/tasks/main.yml).
+can be found in the [examples](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/ansible/roles/py-exporter/tasks/main.yml).
 
 ## Usage
 
@@ -73,7 +73,7 @@ web:
   addr: "0.0.0.0"
 ```
 
-See the full example [here](examples/config.yml).
+See the full example [here](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/config.yml).
 
 ### [Full list of command line arguments](#full-list-of-command-line-arguments)
 
@@ -120,7 +120,7 @@ collector.default options:
 
 ## Examples
 
-In the [examples](examples/) you can find some useful files to look at:
+In the [examples](https://github.com/weastur/cookiecutter-pyexporter/tree/main/examples/) you can find some useful files to look at:
 
 - Docker compose file example
 - Prometheus coinfig to scrape the exporter
@@ -128,19 +128,19 @@ In the [examples](examples/) you can find some useful files to look at:
 - VRL program for Vector
 - SystemD service file for running the exporter outside the container
 - Ansible playbook to deploy it in isolated environment outside the container
-- Full [dump](examples/metrics.txt) (one scrape) of all the metrics exporter can generate. You can investigate it with [prom2json](https://github.com/prometheus/prom2json)
+- Full [dump](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/metrics.txt) (one scrape) of all the metrics exporter can generate. You can investigate it with [prom2json](https://github.com/prometheus/prom2json)
 
 ## Contributing
 
-- Read the [contribution guide](CONTRIBUTING.md)
-- Don't forget to take a quick look at [code of conduct](CODE_OF_CONDUCT.md)
+- Read the [contribution guide](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CONTRIBUTING.md)
+- Don't forget to take a quick look at [code of conduct](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CODE_OF_CONDUCT.md)
 
 ## Authors
 
 Despite the license doesn't require to provide credits,
-I maintain the list of authors in the [AUTHORS](AUTHORS)
+I maintain the list of authors in the [AUTHORS](https://github.com/weastur/cookiecutter-pyexporter/blob/main/AUTHORS.md)
 file in the alphabetical order.
 
 ## License
 
-MIT, see [LICENSE](LICENSE)
+MIT, see [LICENSE](https://github.com/weastur/cookiecutter-pyexporter/blob/main/LICENSE.md)
