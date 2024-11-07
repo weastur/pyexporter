@@ -20,3 +20,5 @@ Clone the repository and install dependencies:
 ```shell
 uv
 ```
+
+## Why is this project written on Python? Will it be rewritten with golang, as more common language for exporters?
