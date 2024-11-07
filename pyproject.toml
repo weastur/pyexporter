@@ -55,6 +55,7 @@ dev-dependencies = [
     "pytest-cov>=5.0.0",
     "pytest>=8.3.3",
     "ruff>=0.7.0",
+    "testcontainers>=4.8.2",
 ]
 
 [tool.ruff]
