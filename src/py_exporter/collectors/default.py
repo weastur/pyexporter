@@ -4,6 +4,7 @@ from prometheus_client import (
     PLATFORM_COLLECTOR,
     PROCESS_COLLECTOR,
     REGISTRY,
+    disable_created_metrics,
 )
 
 from py_exporter.config import Config
@@ -19,3 +20,6 @@ def configure_collectors(config: Config):
     if not config.collector.default.process:
         logger.info("Disabling process collector")
         REGISTRY.unregister(PROCESS_COLLECTOR)
+    if config.collector.disable_created_series:
+        logger.info("Disabling created series")
+        disable_created_metrics()

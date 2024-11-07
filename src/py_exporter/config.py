@@ -46,6 +46,9 @@ class DefaultCollectors(BaseModel):
 
 
 class Collectors(BaseModel):
+    disable_created_series: bool = Field(
+        default=False, description="Disable created series"
+    )
     default: DefaultCollectors = DefaultCollectors()
 
 

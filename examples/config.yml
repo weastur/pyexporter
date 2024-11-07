@@ -13,6 +13,7 @@ web:
       cert: null
       key: null
 collector:
+  disable_created_series: false
   default:
     gc: true
     platform: true
