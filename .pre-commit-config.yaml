@@ -29,6 +29,10 @@ repos:
       - id: mixed-line-ending
       - id: name-tests-test
       - id: pretty-format-json
+        args:
+          - "--autofix"
+          - "--indent=4"
+          - "--no-sort-keys"
       - id: trailing-whitespace
 
   - repo: https://github.com/jorisroovers/gitlint
