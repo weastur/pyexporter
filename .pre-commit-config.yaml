@@ -1,6 +1,6 @@
 ---
 ci:
-  skip: [shellcheck, liccheck, update-authors]
+  skip: [shellcheck, liccheck, update-credits]
 default_install_hook_types: [pre-commit, commit-msg]
 default_stages: [pre-commit]
 repos:
@@ -76,8 +76,8 @@ repos:
 
   - repo: local
     hooks:
-      - id: update-authors
-        name: Update AUTHORS file
-        entry: ./hooks/update-authors.sh
+      - id: update-credits
+        name: Update CREDITS file
+        entry: ./hooks/update-credits.sh
         pass_filenames: false
         language: system

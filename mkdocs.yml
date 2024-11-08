@@ -32,7 +32,7 @@ nav:
   - Home: README.md
   - Contribution: CONTRIBUTING.md
   - Code of conduct: CODE_OF_CONDUCT.md
-  - Authors: AUTHORS.md
+  - Credits: CREDITS.md
   - License: LICENSE.md
 extra:
   generator: false

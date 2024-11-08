@@ -33,5 +33,3 @@ changelog:
           - deprecation
           - enhancement
           - security
-        authors:
-          - pre-commit-ci[bot]

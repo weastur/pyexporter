@@ -135,10 +135,10 @@ In the [examples](https://github.com/weastur/cookiecutter-pyexporter/tree/main/e
 - Read the [contribution guide](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CONTRIBUTING.md)
 - Don't forget to take a quick look at [code of conduct](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CODE_OF_CONDUCT.md)
 
-## Authors
+## Credits
 
 Despite the license doesn't require to provide credits,
-I maintain the list of authors in the [AUTHORS](https://github.com/weastur/cookiecutter-pyexporter/blob/main/AUTHORS.md)
+I maintain the list of authors in the [CREDITS](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CREDITS.md)
 file in the alphabetical order.
 
 ## License
