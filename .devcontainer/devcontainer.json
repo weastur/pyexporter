@@ -4,6 +4,46 @@
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.9",
       "installTools": false
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {
+      "version": "latest",
+      "moby": true
+    },
+    "ghcr.io/devcontainers-extra/features/ruff:1": {
+      "version": "latest"
+    },
+    "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {
+      "version": "latest"
+    },
+    "ghcr.io/lukewiwa/features/shellcheck:0": {
+      "version": "latest"
+    },
+    "ghcr.io/dhoeric/features/hadolint:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "makefile.configureOnOpen": false,
+        "files.autoSave": "onFocusChange",
+        "editor.fontSize": 14,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        "workbench.iconTheme": "vscode-icons"
+      },
+      "extensions": [
+        "charliermarsh.ruff",
+        "tamasfe.even-better-toml",
+        "ms-vscode.makefile-tools",
+        "timonwong.shellcheck",
+        "exiasr.hadolint",
+        "yzhang.markdown-all-in-one",
+        "GitHub.copilot",
+        "ms-azuretools.vscode-docker",
+        "vscode-icons-team.vscode-icons"
+      ]
     }
   }
 }
