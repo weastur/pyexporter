@@ -3,4 +3,4 @@
 set -e
 
 uv pip freeze > requirements.txt
-liccheck -l PARANOID
+uv run liccheck -l PARANOID

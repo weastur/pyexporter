@@ -1,17 +1,20 @@
 .PHONY: docs-dev test bootstrap sync upgrade publish build docker build-docker push-docker bump-show bump-major bump-minor bump-patch bump-part bump-part-num
 
 docs-dev:
-	mkdocs serve
+	uv run mkdocs serve
 
 examples-metrics:
 	curl -s -X GET http://127.0.0.1:9123/metrics > examples/metrics.txt
 
 bootstrap:
-	uv venv
+	pre-commit install
+	uv python install 3.9
+	uv venv --seed
 	$(MAKE) sync
 	$(MAKE) build
 	$(MAKE) build-docker
 	$(MAKE) test
+	pre-commit run --all-files
 
 sync:
 	uv sync
@@ -26,7 +29,7 @@ build:
 	uv build
 
 test:
-	pytest --cov
+	uv run pytest --cov
 
 docker: build-docker push-docker
 
@@ -38,19 +41,19 @@ push-docker: build-docker
 	docker push pyexporter:0.0.0-dev0
 
 bump-show:
-	bump-my-version show-bump
+	uv run bump-my-version show-bump
 
 bump-major:
-	bump-my-version major
+	uv run bump-my-version major
 
 bump-minor:
-	bump-my-version minor
+	uv run bump-my-version minor
 
 bump-patch:
-	bump-my-version patch
+	uv run bump-my-version patch
 
 bump-part:
-	bump-my-version pre_l
+	uv run bump-my-version pre_l
 
 bump-part-num:
-	bump-my-version pre_n
+	uv run bump-my-version pre_n
