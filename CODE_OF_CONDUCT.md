@@ -16,6 +16,6 @@ To ensure a positive environment, please follow these guidelines:
    Avoid spamming or promoting unrelated content.
 
 If you encounter behavior that violates this code of conduct,
-please contact me directly at [me@weastur.com].
+please contact me directly at <me@weastur.com>.
 
 Thank you for helping create a welcoming community!

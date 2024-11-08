@@ -13,7 +13,7 @@ please follow these steps to report it responsibly.
    Reach out to me directly for responsible disclosure.
 
 2. **Contact Information**:
-   Email me at [me@weastur.com] with the subject
+   Email me at <me@weastur.com> with the subject
    "Security Vulnerability Report."
 
 3. **Provide Details**:
