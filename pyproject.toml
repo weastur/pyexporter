@@ -11,7 +11,7 @@ dependencies = [
     "pydantic-settings[yaml]>=2.6.0",
 ]
 readme = "README.md"
-license = { file = "LICENSE" }
+license = { file = "LICENSE.md" }
 keywords = ["exporter", "prometheus", "monitoring"]
 classifiers = [
     "Development Status :: 3 - Alpha",

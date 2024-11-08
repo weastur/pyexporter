@@ -1,4 +1,7 @@
-.PHONY: test bootstrap sync upgrade publish build docker build-docker push-docker bump-show bump-major bump-minor bump-patch bump-part bump-part-num
+.PHONY: docs-dev test bootstrap sync upgrade publish build docker build-docker push-docker bump-show bump-major bump-minor bump-patch bump-part bump-part-num
+
+docs-dev:
+	mkdocs serve
 
 examples-metrics:
 	curl -s -X GET http://127.0.0.1:9123/metrics > examples/metrics.txt
