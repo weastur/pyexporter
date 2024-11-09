@@ -72,17 +72,34 @@ web:
 
 See the full example [here](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/config.yml).
 
+P. S. By the way, you can dump json schema for the configuration file with the following command:
+
+```shell
+py-exporter jsonschema config.schema.json
+```
+
 ### [Full list of command line arguments](#full-list-of-command-line-arguments)
 
 ```shell
-usage: py-exporter [-h] [--log.level {trace,debug,info,success,warning,error,critical}] [--web.port int] [--web.addr IPv4Address]
-                   [--web.tls.cert Path] [--web.tls.key Path] [--web.tls.protocol {SSLv23,TLS_CLIENT,TLS_SERVER,TLSv1,TLSv1_1,TLSv1_2}]
-                   [--web.tls.mtls.enabled | --no-web.tls.mtls.enabled] [--web.tls.mtls.cafile Path] [--web.tls.mtls.capath Path]
-                   [--collector.default.gc | --no-collector.default.gc] [--collector.default.platform | --no-collector.default.platform]
+usage: py-exporter [-h]
+                   [--log.level {trace,debug,info,success,warning,error,critical}]
+                   [--web.port int] [--web.addr IPv4Address]
+                   [--web.tls.cert Path] [--web.tls.key Path]
+                   [--web.tls.protocol int]
+                   [--web.tls.mtls.enabled | --no-web.tls.mtls.enabled]
+                   [--web.tls.mtls.cafile Path] [--web.tls.mtls.capath Path]
+                   [--collector.disable_created_series | --no-collector.disable_created_series]
+                   [--collector.default.gc | --no-collector.default.gc]
+                   [--collector.default.platform | --no-collector.default.platform]
                    [--collector.default.process | --no-collector.default.process]
+                   {jsonschema} ...
 
 optional arguments:
   -h, --help            show this help message and exit
+
+subcommands:
+  {jsonschema}
+    jsonschema          Dump the JSON schema to a file.
 
 log options:
   --log.level {trace,debug,info,success,warning,error,critical}
@@ -96,8 +113,9 @@ web options:
 web.tls options:
   --web.tls.cert Path   Path to the TLS certificate (default: None)
   --web.tls.key Path    Path to the TLS key (default: None)
-  --web.tls.protocol {SSLv23,TLS_CLIENT,TLS_SERVER,TLSv1,TLSv1_1,TLSv1_2}
-                        TLS protocol (default: 2)
+  --web.tls.protocol int
+                        TLS protocol number, as described in the ssl python
+                        module (default: 17)
 
 web.tls.mtls options:
   --web.tls.mtls.enabled, --no-web.tls.mtls.enabled
@@ -107,12 +125,17 @@ web.tls.mtls options:
   --web.tls.mtls.capath Path
                         Path to the client CA directory (default: None)
 
+collector options:
+  --collector.disable_created_series, --no-collector.disable_created_series
+                        Disable created series (default: False)
+
 collector.default options:
   --collector.default.gc, --no-collector.default.gc
                         Enable the GC collector (default: True)
   --collector.default.platform, --no-collector.default.platform
                         Enable the platform collector (default: True)
   --collector.default.process, --no-collector.default.process
+                        Enable the process collector (default: True)
 ```
 
 ## Examples

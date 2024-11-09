@@ -166,5 +166,6 @@ requirements.txt
 
 CREDITS.new.md
 
-./config.yml
-./config.yaml
+/config.yml
+/config.yaml
+/config.schema.json

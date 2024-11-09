@@ -7,7 +7,7 @@ web:
   tls:
     cert: null
     key: null
-    protocol: "TLS_CLIENT"
+    protocol: 17
     mtls:
       enabled: false
       cert: null

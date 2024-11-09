@@ -1,6 +1,5 @@
 import ssl
 import typing
-from enum import IntEnum
 from ipaddress import IPv4Address
 
 from pydantic import (
@@ -10,23 +9,23 @@ from pydantic import (
     PositiveInt,
     model_validator,
 )
-from pydantic.types import DirectoryPath
+from pydantic.json_schema import SkipJsonSchema
+from pydantic.types import DirectoryPath, NewPath
 from pydantic_settings import (
     BaseSettings,
+    CliSubCommand,
     PydanticBaseSettingsSource,
     SettingsConfigDict,
     YamlConfigSettingsSource,
 )
 
 
-class TLSProtocol(IntEnum):
-    SSLv23 = ssl.PROTOCOL_SSLv23
-    TLS = ssl.PROTOCOL_TLS
-    TLS_CLIENT = ssl.PROTOCOL_TLS_CLIENT
-    TLS_SERVER = ssl.PROTOCOL_TLS_SERVER
-    TLSv1 = ssl.PROTOCOL_TLSv1
-    TLSv1_1 = ssl.PROTOCOL_TLSv1_1
-    TLSv1_2 = ssl.PROTOCOL_TLSv1_2
+class JSONSchema(BaseModel):
+    """Dump the JSON schema to a file."""
+
+    path: NewPath = Field(
+        default="config.schema.json", description="Path to the schema file"
+    )
 
 
 class Log(BaseModel):
@@ -69,8 +68,9 @@ class WebTLS(BaseModel):
     key: typing.Optional[FilePath] = Field(
         default=None, description="Path to the TLS key"
     )
-    protocol: TLSProtocol = Field(
-        default=TLSProtocol.TLS, description="TLS protocol"
+    protocol: int = Field(
+        default=ssl.PROTOCOL_TLS_SERVER,
+        description="TLS protocol number, as described in the ssl python module",
     )
     mtls: WebmTLS = WebmTLS()
 
@@ -92,6 +92,7 @@ class Web(BaseModel):
 
 
 class Config(BaseSettings):
+    jsonschema: SkipJsonSchema[CliSubCommand[JSONSchema]]
     log: Log = Log()
     web: Web = Web()
     collector: Collectors = Collectors()

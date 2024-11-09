@@ -1,3 +1,4 @@
+import json
 import signal
 import sys
 import time
@@ -6,9 +7,10 @@ from loguru import logger
 from prometheus_client import (
     start_http_server,
 )
+from pydantic_settings import get_subcommand
 
 from py_exporter.collectors import configure_collectors
-from py_exporter.config import Config
+from py_exporter.config import Config, JSONSchema
 
 _graceful_shutdown = False
 
@@ -30,11 +32,20 @@ def _setup_logger(log_level: str) -> None:
     logger.info("Set log level to {}", log_level)
 
 
+def _dump_json_schema_if_requested(config: Config) -> None:
+    jsonschema_cmd = get_subcommand(config, is_required=False)
+    if isinstance(jsonschema_cmd, JSONSchema):
+        with open(jsonschema_cmd.path, "w") as schema_fp:
+            json.dump(config.model_json_schema(), schema_fp, indent=4)
+        sys.exit(0)
+
+
 def entrypoint() -> int:
     signal.signal(signal.SIGINT, _signal_handler)
     signal.signal(signal.SIGTERM, _signal_handler)
 
-    config = Config()
+    config = Config()  # pyright: ignore
+    _dump_json_schema_if_requested(config)
     _setup_logger(config.log.level)
     logger.info("Starting up")
     configure_collectors(config)
@@ -47,7 +58,7 @@ def entrypoint() -> int:
         port=config.web.port,
         certfile=str(config.web.tls.cert) if config.web.tls.cert else None,
         keyfile=str(config.web.tls.key) if config.web.tls.key else None,
-        protocol=int(config.web.tls.protocol),
+        protocol=config.web.tls.protocol,
         client_auth_required=config.web.tls.mtls.enabled,
         client_cafile=str(config.web.tls.mtls.cafile)
         if config.web.tls.mtls.cafile

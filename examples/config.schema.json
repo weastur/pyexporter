@@ -1,0 +1,229 @@
+{
+    "$defs": {
+        "Collectors": {
+            "properties": {
+                "disable_created_series": {
+                    "default": false,
+                    "description": "Disable created series",
+                    "title": "Disable Created Series",
+                    "type": "boolean"
+                },
+                "default": {
+                    "$ref": "#/$defs/DefaultCollectors",
+                    "default": {
+                        "gc": true,
+                        "platform": true,
+                        "process": true
+                    }
+                }
+            },
+            "title": "Collectors",
+            "type": "object"
+        },
+        "DefaultCollectors": {
+            "properties": {
+                "gc": {
+                    "default": true,
+                    "description": "Enable the GC collector",
+                    "title": "Gc",
+                    "type": "boolean"
+                },
+                "platform": {
+                    "default": true,
+                    "description": "Enable the platform collector",
+                    "title": "Platform",
+                    "type": "boolean"
+                },
+                "process": {
+                    "default": true,
+                    "description": "Enable the process collector",
+                    "title": "Process",
+                    "type": "boolean"
+                }
+            },
+            "title": "DefaultCollectors",
+            "type": "object"
+        },
+        "Log": {
+            "properties": {
+                "level": {
+                    "default": "info",
+                    "description": "Log level",
+                    "enum": [
+                        "trace",
+                        "debug",
+                        "info",
+                        "success",
+                        "warning",
+                        "error",
+                        "critical"
+                    ],
+                    "title": "Level",
+                    "type": "string"
+                }
+            },
+            "title": "Log",
+            "type": "object"
+        },
+        "Web": {
+            "properties": {
+                "port": {
+                    "default": 9123,
+                    "description": "Port to listen on",
+                    "exclusiveMinimum": 0,
+                    "title": "Port",
+                    "type": "integer"
+                },
+                "addr": {
+                    "default": "0.0.0.0",
+                    "description": "Address to listen on",
+                    "format": "ipv4",
+                    "title": "Addr",
+                    "type": "string"
+                },
+                "tls": {
+                    "$ref": "#/$defs/WebTLS",
+                    "default": {
+                        "cert": null,
+                        "key": null,
+                        "protocol": 17,
+                        "mtls": {
+                            "cafile": null,
+                            "capath": null,
+                            "enabled": false
+                        }
+                    }
+                }
+            },
+            "title": "Web",
+            "type": "object"
+        },
+        "WebTLS": {
+            "properties": {
+                "cert": {
+                    "anyOf": [
+                        {
+                            "format": "file-path",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Path to the TLS certificate",
+                    "title": "Cert"
+                },
+                "key": {
+                    "anyOf": [
+                        {
+                            "format": "file-path",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Path to the TLS key",
+                    "title": "Key"
+                },
+                "protocol": {
+                    "default": 17,
+                    "description": "TLS protocol number, as described in the ssl python module",
+                    "title": "Protocol",
+                    "type": "integer"
+                },
+                "mtls": {
+                    "$ref": "#/$defs/WebmTLS",
+                    "default": {
+                        "enabled": false,
+                        "cafile": null,
+                        "capath": null
+                    }
+                }
+            },
+            "title": "WebTLS",
+            "type": "object"
+        },
+        "WebmTLS": {
+            "properties": {
+                "enabled": {
+                    "default": false,
+                    "description": "Enable mTLS",
+                    "title": "Enabled",
+                    "type": "boolean"
+                },
+                "cafile": {
+                    "anyOf": [
+                        {
+                            "format": "file-path",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Path to the client CA file",
+                    "title": "Cafile"
+                },
+                "capath": {
+                    "anyOf": [
+                        {
+                            "format": "directory-path",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Path to the client CA directory",
+                    "title": "Capath"
+                }
+            },
+            "title": "WebmTLS",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "log": {
+            "$ref": "#/$defs/Log",
+            "default": {
+                "level": "info"
+            }
+        },
+        "web": {
+            "$ref": "#/$defs/Web",
+            "default": {
+                "port": 9123,
+                "addr": "0.0.0.0",
+                "tls": {
+                    "cert": null,
+                    "key": null,
+                    "mtls": {
+                        "cafile": null,
+                        "capath": null,
+                        "enabled": false
+                    },
+                    "protocol": 17
+                }
+            }
+        },
+        "collector": {
+            "$ref": "#/$defs/Collectors",
+            "default": {
+                "disable_created_series": false,
+                "default": {
+                    "gc": true,
+                    "platform": true,
+                    "process": true
+                }
+            }
+        }
+    },
+    "title": "Config",
+    "type": "object"
+}
