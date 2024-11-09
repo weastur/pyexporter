@@ -2,24 +2,23 @@
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/weastur/cookiecutter-pyexporter/main.svg)](https://results.pre-commit.ci/latest/github/weastur/cookiecutter-pyexporter/main)
 
-Prometheus exporter for some awesome metrics.
+Template for a Prometheus exporter for various metrics.
 
 ## Installation
 
-The exporter is written on Python. The simplest way to run it is to use the Docker image.
+The exporter is written in Python. The simplest way to run it is to use the Docker image.
 
 ```shell
 docker run -d -p 9123:9123 weastur/py-exporter:latest
 ```
 
-Also, as it's a usual python package, you can install it with pip or pipx:
+Additionally, as it's a standard Python package, you can install it with `pip` or `pipx`:
 
 ```shell
 pip install py-exporter
 ```
 
-More accurate and complicated installation with the isolation in a virtual environment
-can be found in the [examples](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/ansible/roles/py-exporter/tasks/main.yml).
+An isolated installation using a virtual environment can be found in the [examples](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/ansible/roles/py-exporter/tasks/main.yml).
 
 ## Usage
 
@@ -30,21 +29,19 @@ There are several ways to configure the exporter (in a priority order):
 - Defaults
 - Command line arguments
 - Environment variables
-- `.env` file in a current directory
-- Configuration file (`config.yaml` or `config.yml`) in a current directory
+- `.env` file in the current directory
+- Configuration file (`config.yaml` or `config.yml`) in the current directory
 
 #### Defaults and command line arguments
 
-Exporter can be run with or without arguments(with the defaults).
-See the full list of parameters with defauls
+The exporter can be run with or without arguments (using defaults). See the full list of parameters with defaults
 [below](#full-list-of-command-line-arguments).
 
 #### Environment variables
 
-All the parameters can be set with the environment variables.
-The environment variables should be in the following format:
-`PY_EXPORTER_<PARAMETER_PATH>` with the `__` as a nested delimeter
-(replacement for `.` in command line arguments)
+All parameters can be set with environment variables. The environment variables should be in the following format:
+`PY_EXPORTER_<PARAMETER_PATH>` using `__` as a nested delimeter
+(replacing `.` in command line arguments)
 For example:
 
 ```shell
@@ -54,7 +51,7 @@ export PY_EXPORTER_COLLECTOR__DEFAULT__GC=false
 
 #### `.env` file
 
-The `.env` file should be in the current directory and have the following format:
+The `.env` file should be in the current directory and follow this format:
 
 ```shell
 PY_EXPORTER_LOG__LEVEL=debug
@@ -63,7 +60,7 @@ PY_EXPORTER_COLLECTOR__DEFAULT__GC=false
 
 #### Configuration file
 
-The configuration file should be in the current directory and have the following format:
+The configuration file should be in the current directory and follow this format:
 
 ```yaml
 log:
@@ -122,13 +119,14 @@ collector.default options:
 
 In the [examples](https://github.com/weastur/cookiecutter-pyexporter/tree/main/examples/) you can find some useful files to look at:
 
-- Docker compose file example
+- Docker Compose file example
 - Prometheus coinfig to scrape the exporter
 - Grafana dashboard
 - VRL program for Vector
 - SystemD service file for running the exporter outside the container
-- Ansible playbook to deploy it in isolated environment outside the container
-- Full [dump](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/metrics.txt) (one scrape) of all the metrics exporter can generate. You can investigate it with [prom2json](https://github.com/prometheus/prom2json)
+- Ansible playbook to deploy it in an isolated environment outside the container
+- Full [dump](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/metrics.txt) (one scrape) of all metrics exporter can generate.
+  You can investigate it with [prom2json](https://github.com/prometheus/prom2json)
 
 ## Contributing
 
@@ -137,8 +135,7 @@ In the [examples](https://github.com/weastur/cookiecutter-pyexporter/tree/main/e
 
 ## Credits
 
-Despite the license doesn't require to provide credits,
-I maintain the list of authors in the [CREDITS](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CREDITS.md)
+Although the license doesn’t require credits, I maintain a list of authors in the [CREDITS](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CREDITS.md)
 file in the alphabetical order.
 
 ## License
