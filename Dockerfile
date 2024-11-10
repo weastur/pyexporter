@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.authors="Pavel Sapezhka <me@weastur.com>"
 LABEL org.opencontainers.image.created=2024-10-23T09:13:54Z
 LABEL org.opencontainers.image.url=https://pyexporter.weastur.com
 LABEL org.opencontainers.image.documentation=https://pyexporter.weastur.com
-LABEL org.opencontainers.image.source=https://github.com/weastur/cookiecutter-pyexporter
+LABEL org.opencontainers.image.source=https://github.com/weastur/pyexporter
 LABEL org.opencontainers.image.version=0.0.0-dev0
 LABEL org.opencontainers.image.licenses=MIT
 

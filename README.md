@@ -1,6 +1,4 @@
-# cookiecutter-pyexporter
-
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/weastur/cookiecutter-pyexporter/main.svg)](https://results.pre-commit.ci/latest/github/weastur/cookiecutter-pyexporter/main)
+# pyexporter
 
 Template for a Prometheus exporter for various metrics.
 
@@ -18,7 +16,7 @@ Additionally, as it's a standard Python package, you can install it with `pip` o
 pip install py-exporter
 ```
 
-An isolated installation using a virtual environment can be found in the [examples](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/ansible/roles/py-exporter/tasks/main.yml).
+An isolated installation using a virtual environment can be found in the [examples](https://github.com/weastur/pyexporter/blob/main/examples/ansible/roles/py-exporter/tasks/main.yml).
 
 ## Usage
 
@@ -70,7 +68,7 @@ web:
   addr: "0.0.0.0"
 ```
 
-See the full example [here](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/config.yml).
+See the full example [here](https://github.com/weastur/pyexporter/blob/main/examples/config.yml).
 
 P. S. By the way, you can dump json schema for the configuration file with the following command:
 
@@ -140,7 +138,7 @@ collector.default options:
 
 ## Examples
 
-In the [examples](https://github.com/weastur/cookiecutter-pyexporter/tree/main/examples/) you can find some useful files to look at:
+In the [examples](https://github.com/weastur/pyexporter/tree/main/examples/) you can find some useful files to look at:
 
 - Docker Compose file example
 - Prometheus coinfig to scrape the exporter
@@ -148,19 +146,19 @@ In the [examples](https://github.com/weastur/cookiecutter-pyexporter/tree/main/e
 - VRL program for Vector
 - SystemD service file for running the exporter outside the container
 - Ansible playbook to deploy it in an isolated environment outside the container
-- Full [dump](https://github.com/weastur/cookiecutter-pyexporter/blob/main/examples/metrics.txt) (one scrape) of all metrics exporter can generate.
+- Full [dump](https://github.com/weastur/pyexporter/blob/main/examples/metrics.txt) (one scrape) of all metrics exporter can generate.
   You can investigate it with [prom2json](https://github.com/prometheus/prom2json)
 
 ## Contributing
 
-- Read the [contribution guide](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CONTRIBUTING.md)
-- Don't forget to take a quick look at [code of conduct](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CODE_OF_CONDUCT.md)
+- Read the [contribution guide](https://github.com/weastur/pyexporter/blob/main/CONTRIBUTING.md)
+- Don't forget to take a quick look at [code of conduct](https://github.com/weastur/pyexporter/blob/main/CODE_OF_CONDUCT.md)
 
 ## Credits
 
-Although the license doesn’t require credits, I maintain a list of authors in the [CREDITS](https://github.com/weastur/cookiecutter-pyexporter/blob/main/CREDITS.md)
+Although the license doesn’t require credits, I maintain a list of authors in the [CREDITS](https://github.com/weastur/pyexporter/blob/main/CREDITS.md)
 file in the alphabetical order.
 
 ## License
 
-MIT, see [LICENSE](https://github.com/weastur/cookiecutter-pyexporter/blob/main/LICENSE.md)
+MIT, see [LICENSE](https://github.com/weastur/pyexporter/blob/main/LICENSE.md)

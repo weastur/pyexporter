@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: cookiecutter-pyexporter
+title: pyexporter
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -8,7 +8,7 @@ authors:
   - given-names: Pavel
     family-names: Sapezhka
     email: me@weastur.com
-repository-code: 'https://github.com/weastur/cookiecutter-pyexporter'
+repository-code: 'https://github.com/weastur/pyexporter'
 url: 'https://pyexporter.weastur.com'
 abstract: >-
   Awesome exporter

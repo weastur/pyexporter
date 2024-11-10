@@ -1,9 +1,9 @@
 site_name: py-exporter
 site_url: https://pyexporter.weastur.com
-repo_url: https://github.com/weastur/cookiecutter-pyexporter
-repo_name: weastur/cookiecutter-pyexporter
+repo_url: https://github.com/weastur/pyexporter
+repo_name: weastur/pyexporter
 site_description: >-
-  pyexporter is a cookiecutter template for creating a Python exporter
+  pyexporter is a template repo for creating a Python exporter
 site_author: weastur
 copyright: >-
   Copyright &copy; 2024 Pavel Sapezhka –
