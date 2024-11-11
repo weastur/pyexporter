@@ -1,4 +1,7 @@
-.PHONY: docs-dev test bootstrap sync upgrade publish build docker build-docker push-docker bump-show bump-major bump-minor bump-patch bump-part bump-part-num
+.PHONY: docs-deploy docs-dev test bootstrap sync upgrade publish build docker build-docker push-docker bump-show bump-major bump-minor bump-patch bump-part bump-part-num
+
+docs-deploy:
+	uv run mkdocs gh-deploy
 
 docs-dev:
 	uv run mkdocs serve

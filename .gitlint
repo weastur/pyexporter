@@ -6,7 +6,3 @@ line-length=72
 
 [title-min-length]
 min-length=10
-
-[ignore-by-author-name]
-regex=^(pre-commit-ci|dependabot)\[bot\]
-ignore=all
