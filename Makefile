@@ -1,4 +1,4 @@
-.PHONY: docs-deploy docs-dev test bootstrap sync upgrade publish build docker build-docker push-docker bump-show bump-major bump-minor bump-patch bump-part bump-part-num
+.PHONY: docs-deploy docs-dev test bootstrap sync upgrade publish build docker docker-build docker-push bump-show bump-major bump-minor bump-patch bump-part bump-part-num
 
 docs-deploy:
 	uv run mkdocs gh-deploy
@@ -15,7 +15,7 @@ bootstrap:
 	uv venv --seed
 	$(MAKE) sync
 	$(MAKE) build
-	$(MAKE) build-docker
+	$(MAKE) docker-build
 	$(MAKE) test
 	pre-commit run --all-files
 
@@ -34,14 +34,14 @@ build:
 test:
 	uv run pytest --cov
 
-docker: build-docker push-docker
+docker: docker-build docker-push
 
-build-docker:
-	docker buildx build --platform linux/amd64,linux/arm64 -f Dockerfile --tag pyexporter:latest --tag pyexporter:0.0.0-dev0 .
+docker-build:
+	docker buildx build --platform linux/amd64,linux/arm64 -f Dockerfile --tag weastur/py-exporter:latest --tag weastur/py-exporter:0.0.0-dev0 .
 
-push-docker: build-docker
-	docker push pyexporter:latest
-	docker push pyexporter:0.0.0-dev0
+docker-push: docker-build
+	docker push weastur/py-exporter:latest
+	docker push weastur/py-exporter:0.0.0-dev0
 
 bump-show:
 	uv run bump-my-version show-bump
