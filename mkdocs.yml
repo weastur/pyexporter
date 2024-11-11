@@ -36,6 +36,9 @@ nav:
   - License: LICENSE.md
 extra:
   generator: false
+  analytics:
+    provider: google
+    property: G-N3YKKYPZEH
   consent:
     title: Cookie consent
     description: >-
