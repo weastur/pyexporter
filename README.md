@@ -15,10 +15,10 @@ The exporter is written in Python. The simplest way to run it is to use the Dock
 docker run -d -p 9123:9123 weastur/py-exporter:latest
 ```
 
-Additionally, as it's a standard Python package, you can install it with `pip` or `pipx` (**won't work here**, as it's a template project, no actual artifacts were uploaded into PyPI):
+Additionally, as it's a standard Python package, you can install it with `pip` or `pipx`:
 
 ```shell
-pip install py-exporter
+pip install py-exporter-template
 ```
 
 An isolated installation using a virtual environment can be found in the [examples](https://github.com/weastur/pyexporter/blob/main/examples/ansible/roles/py-exporter/tasks/main.yml).

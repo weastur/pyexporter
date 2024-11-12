@@ -1,5 +1,5 @@
 [project]
-name = "py-exporter"
+name = "py-exporter-template"
 version = "0.0.0-dev0"
 description = "Add your description here"
 authors = [{ name = "Pavel Sapezhka", email = "me@weastur.com" }]
@@ -34,14 +34,14 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://pyexporter.io"
-Documentation = "https://pyexporter.io"
+Homepage = "https://pyexporter.weastur.com"
+Documentation = "https://pyexporter.weastur.com"
 Repository = "https://github.com/weastur/pyexporter.git"
 Issues = "https://github.com/weastur/pyexporter/issues"
-Changelog = "https://github.com/weastur/pyexporter/blob/master/CHANGELOG.md"
+Changelog = "https://github.com/weastur/pyexporter/releases"
 
 [project.scripts]
-py-exporter = "py_exporter.main:entrypoint"
+py-exporter = "py_exporter_template.main:entrypoint"
 
 [build-system]
 requires = ["hatchling"]

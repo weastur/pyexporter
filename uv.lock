@@ -660,7 +660,7 @@ wheels = [
 ]
 
 [[package]]
-name = "py-exporter"
+name = "py-exporter-template"
 version = "0.0.0.dev0"
 source = { editable = "." }
 dependencies = [

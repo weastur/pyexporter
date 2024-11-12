@@ -9,8 +9,8 @@ from prometheus_client import (
 )
 from pydantic_settings import get_subcommand
 
-from py_exporter.collectors import configure_collectors
-from py_exporter.config import Config, JSONSchema
+from py_exporter_template.collectors import configure_collectors
+from py_exporter_template.config import Config, JSONSchema
 
 _graceful_shutdown = False
 

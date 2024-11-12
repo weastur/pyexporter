@@ -7,7 +7,7 @@ from prometheus_client import (
     disable_created_metrics,
 )
 
-from py_exporter.config import Config
+from py_exporter_template.config import Config
 
 
 def configure_collectors(config: Config):
