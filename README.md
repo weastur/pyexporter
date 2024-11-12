@@ -2,6 +2,11 @@
 
 Template for a Prometheus exporter for various metrics.
 
+- Create a repo from this template
+- Change name of the package, Docker image, docs, examples, etc.
+- Implement your own collectors
+- Enjoy!
+
 ## Installation
 
 The exporter is written in Python. The simplest way to run it is to use the Docker image.
@@ -10,7 +15,7 @@ The exporter is written in Python. The simplest way to run it is to use the Dock
 docker run -d -p 9123:9123 weastur/py-exporter:latest
 ```
 
-Additionally, as it's a standard Python package, you can install it with `pip` or `pipx` (won't work here, as it's a template project, no actual artifacts were uploaded into PyPI):
+Additionally, as it's a standard Python package, you can install it with `pip` or `pipx` (**won't work here**, as it's a template project, no actual artifacts were uploaded into PyPI):
 
 ```shell
 pip install py-exporter
