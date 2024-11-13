@@ -1,4 +1,4 @@
-.PHONY: docs-deploy docs-dev test bootstrap sync upgrade publish build docker docker-build docker-push bump-show bump-major bump-minor bump-patch bump-part bump-part-num
+.PHONY: examples-schema docs-deploy docs-dev test bootstrap sync upgrade publish build docker docker-build docker-push bump-show bump-major bump-minor bump-patch bump-part bump-part-num
 
 docs-deploy:
 	uv run mkdocs gh-deploy
@@ -8,6 +8,10 @@ docs-dev:
 
 examples-metrics:
 	curl -s -X GET http://127.0.0.1:9123/metrics > examples/metrics.txt
+
+examples-schema:
+	rm -f examples/config.schema.json
+	uv run py-exporter jsonschema --path examples/config.schema.json
 
 bootstrap:
 	pre-commit install
