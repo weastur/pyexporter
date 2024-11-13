@@ -1,0 +1,23 @@
+---
+data_dir: /var/lib/vector
+
+api:
+  enabled: true
+  playground: true
+  address: 0.0.0.0:8686
+
+sources:
+  exporter:
+    type: docker_logs
+    include_images:
+      - weastur/py-exporter:latest
+
+sinks:
+  out:
+    inputs:
+      - "exporter"
+    type: "console"
+    encoding:
+      codec: "json"
+      json:
+        pretty: true

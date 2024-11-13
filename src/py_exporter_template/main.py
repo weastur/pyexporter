@@ -5,12 +5,16 @@ import time
 
 from loguru import logger
 from prometheus_client import (
+    Info,
     start_http_server,
 )
 from pydantic_settings import get_subcommand
 
 from py_exporter_template.collectors import configure_collectors
 from py_exporter_template.config import Config, JSONSchema
+
+i = Info("pyexporter_version", "Version of pyexporter")
+i.info({"version": "1.2.3"})
 
 _graceful_shutdown = False
 

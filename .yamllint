@@ -1,0 +1,14 @@
+---
+extends: default
+
+ignore: |
+  .cache/
+  .pytest_cache/
+  .ruff_cache/
+  .venv/
+  .github/
+  .devcontainer/
+  dist.
+
+rules:
+  line-length: disable
