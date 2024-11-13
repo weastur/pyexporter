@@ -1,8 +1,11 @@
 # pyexporter
 
-![PyPI - License](https://img.shields.io/pypi/l/py_exporter_template)
-![PyPI - Version](https://img.shields.io/pypi/v/py_exporter_template)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/py_exporter_template)
+![PyPI - License](https://img.shields.io/pypi/l/py_exporter_template?style=for-the-badge&link=https%3A%2F%2Fpyexporter.weastur.com%2FLICENSE%2F)
+![Codecov](https://img.shields.io/codecov/c/github/weastur/pyexporter?style=for-the-badge&link=https%3A%2F%2Fcodecov.io%2Fgh%2Fweastur%2Fpyexporter)
+![PyPI - Version](https://img.shields.io/pypi/v/py_exporter_template?style=for-the-badge&link=https%3A%2F%2Fpypi.org%2Fproject%2Fpy-exporter-template%2F%23history)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/py_exporter_template?style=for-the-badge&link=https%3A%2F%2Fpypi.org%2Fproject%2Fpy-exporter-template%2F)
+![uv](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fastral-sh%2Fuv%2Fmain%2Fassets%2Fbadge%2Fv0.json&style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fastral-sh%2Fuv)
+![ruff](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fastral-sh%2Fruff%2Fmain%2Fassets%2Fbadge%2Fv2.json&style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fastral-sh%2Fruff)
 
 Template for a Prometheus exporter for various metrics.
 
