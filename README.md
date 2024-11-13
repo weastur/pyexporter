@@ -1,5 +1,9 @@
 # pyexporter
 
+![PyPI - License](https://img.shields.io/pypi/l/py_exporter_template)
+![PyPI - Version](https://img.shields.io/pypi/v/py_exporter_template)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/py_exporter_template)
+
 Template for a Prometheus exporter for various metrics.
 
 - Create a repo from this template
