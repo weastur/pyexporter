@@ -7,15 +7,30 @@ api:
   address: 0.0.0.0:8686
 
 sources:
-  exporter:
+  exporter_logs:
     type: docker_logs
     include_images:
       - weastur/py-exporter:latest
 
+transforms:
+  exporter_parser:
+    type: remap
+    inputs:
+      - exporter_logs
+    source: |-
+      structured, .parsing_error = parse_regex(.message, r'^(?P<timestamp>[-:.+T\d]+)\ \|\ (?P<log_level>[A-Z]+)\ +\|\ (?P<message>.*)\ \|\ (?P<position>.*)$')
+      if .parsing_error == null {
+        . = merge(., structured)
+      } else {
+          err = .parsing_error
+          log("Unable to parse: {{err}}", level: "error")
+      }
+      .tags = ["pyexporter"]
+
 sinks:
   out:
     inputs:
-      - "exporter"
+      - "exporter_parser"
     type: "console"
     encoding:
       codec: "json"
