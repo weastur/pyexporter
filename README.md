@@ -28,7 +28,7 @@ Additionally, as it's a standard Python package, you can install it with `pip` o
 pip install py-exporter-template
 ```
 
-An isolated installation using a virtual environment can be found in the [examples](https://github.com/weastur/pyexporter/blob/main/examples/ansible/roles/py-exporter/tasks/main.yml).
+An isolated installation using a virtual environment can be found in the [examples](https://github.com/weastur/pyexporter/blob/main/examples/ansible/roles/playbook.yml).
 
 ## Usage
 
@@ -152,12 +152,12 @@ collector.default options:
 
 In the [examples](https://github.com/weastur/pyexporter/tree/main/examples/) you can find some useful files to look at:
 
-- Docker Compose file example
-- Prometheus coinfig to scrape the exporter
-- Grafana dashboard
-- VRL program for Vector
-- SystemD service file for running the exporter outside the container
-- Ansible playbook to deploy it in an isolated environment outside the container
+- Docker Compose [file](https://github.com/weastur/pyexporter/blob/main/examples/observability/docker-compose.yml) example
+- Prometheus [config](https://github.com/weastur/pyexporter/blob/main/examples/observability/prometheus.yml) to scrape the exporter
+- Grafana [dashboard](https://github.com/weastur/pyexporter/blob/main/examples/observability/dashboard.json)
+- VRL [program](https://github.com/weastur/pyexporter/blob/main/examples/observability/vector.yaml) for Vector
+- SystemD [service](https://github.com/weastur/pyexporter/blob/main/examples/ansible/service.j2) file for running the exporter outside the container
+- Ansible [playbook](https://github.com/weastur/pyexporter/blob/main/examples/ansible/playbook.yml) to deploy it in an isolated environment outside the container
 - Full [dump](https://github.com/weastur/pyexporter/blob/main/examples/metrics.txt) (one scrape) of all metrics exporter can generate.
   You can investigate it with [prom2json](https://github.com/prometheus/prom2json)
 

@@ -1,5 +1,7 @@
 # Observability stack example
 
+[**This is just an example, not a production ready solution**]
+
 ```shell
 docker-compose up -d
 ```
