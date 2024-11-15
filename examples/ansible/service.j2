@@ -1,0 +1,13 @@
+[Unit]
+Description=pyexporter
+After=network.target
+
+[Service]
+User=nobody
+Group=nogroup
+WorkingDirectory=/opt/pyexporter
+ExecStart=/opt/pyexporter/venv/bin/py-exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
