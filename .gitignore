@@ -169,3 +169,4 @@ CREDITS.new.md
 /config.yml
 /config.yaml
 /config.schema.json
+.DS_Store
